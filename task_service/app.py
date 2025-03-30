@@ -3,15 +3,15 @@ from flask_jwt_extended import JWTManager
 from db import db
 from routes import task_bp
 import config
+from flask_migrate import Migrate
 
-print("DB_HOST in app.py:", os.getenv("DB_HOST"))
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = config.SQLALCHEMY_DATABASE_URI
 app.config["JWT_SECRET_KEY"] = config.JWT_SECRET_KEY
 
 db.init_app(app)
 jwt = JWTManager(app)
-
+migrate = Migrate(app, db)
 app.register_blueprint(task_bp, url_prefix="/tasks")
 
 if __name__ == "__main__":
