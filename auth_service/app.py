@@ -5,11 +5,13 @@ from db import db
 from models import User 
 from routes import auth_bp
 from flask_migrate import Migrate
+from flask_cors import CORS
 import config
 import os
 
 print("DB_HOST in app.py:", os.getenv("DB_HOST"))
 app = Flask(__name__)
+CORS(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = config.SQLALCHEMY_DATABASE_URI
 app.config["JWT_SECRET_KEY"] = config.JWT_SECRET_KEY
 app.config['DEBUG'] = True

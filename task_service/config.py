@@ -14,3 +14,4 @@ SQLALCHEMY_DATABASE_URI = f"postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@{DB_HO
 print("DB_HOST:", os.getenv("DB_HOST"))
 
 JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY")
+CORS_ALLOWED_ORIGIN = os.getenv("CORS_ALLOWED_ORIGIN")
