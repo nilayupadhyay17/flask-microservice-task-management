@@ -10,7 +10,7 @@ app = Flask(__name__)
 # CORS(app)
 # cors_allowed_origin = config.CORS_ALLOWED_ORIGIN
 # # Configure CORS with dynamic allowed origin
-CORS(app, origins=["http://localhost:3000"], methods=["GET", "POST", "DELETE", "PUT"])
+CORS(app, origins=["*"], methods=["GET", "POST", "DELETE", "PUT"])
 # 
 # CORS(app)
 
