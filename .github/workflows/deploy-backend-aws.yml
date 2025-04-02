@@ -50,7 +50,7 @@ jobs:
       - name: Build & Push auth_service
         run: |
           ls -la auth_service/  # Debugging step to verify file presence
-          docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/taskmanagement-backend-auth_service:${{ github.sha }} -f auth_service/Dockerfile auth_service/
+          docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/taskmanagement-backend-auth_service:${{ github.sha }}
           docker tag ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/taskmanagement-backend-auth_service:${{ github.sha }} ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/taskmanagement-backend-auth_service:latest
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/taskmanagement-backend-auth_service:${{ github.sha }}
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/taskmanagement-backend-auth_service:latest
