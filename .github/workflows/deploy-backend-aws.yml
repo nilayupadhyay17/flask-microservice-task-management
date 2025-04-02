@@ -61,6 +61,6 @@ jobs:
         run: |
           cd task_service
           docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/taskmanagement-backend-task_service:${{ github.sha }} .
-          docker tag ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets_REGION }}.amazonaws.com/taskmanagement-backend-task_service:${{ github.sha }} ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/taskmanagement-backend-task_service:latest
+          docker tag ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/taskmanagement-backend-task_service:${{ github.sha }} ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/taskmanagement-backend-task_service:latest
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/taskmanagement-backend-task_service:${{ github.sha }}
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/taskmanagement-backend-task_service:latest
