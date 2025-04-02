@@ -54,3 +54,7 @@ def delete_task(id):
     db.session.delete(task)
     db.session.commit()
     return jsonify({"message": "Task deleted successfully!"}), 200
+
+@task_bp.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "healthy"}), 200

@@ -35,3 +35,7 @@ def login():
 
     access_token = create_access_token(identity=str(user.id))
     return jsonify(access_token=access_token), 200
+
+@auth_bp.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "healthy"}), 200
